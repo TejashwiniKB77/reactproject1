@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #eef2ff;
+  color: #333;
+}
+
+/* PAGE BANNER */
+.page-banner {
+  background: url("/pu.photo.jpeg") center / cover no-repeat;
+  height: 260px;
+}
+
+.page-banner-overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-banner-content {
+  text-align: center;
+  color: white;
+}
+
+.page-banner-content h1 {
+  font-size: 40px;
+}
+
+/* EVENTS SECTION */
+.events-section {
+  padding: 70px 20px;
+  background: #f6f7f9;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.events-tag {
+  color: #ff3b1f;
+  font-weight: bold;
+}
+
+.events-header h2 span {
+  color: #ff3b1f;
+}
+
+/* CARDS */
+.events-cards {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+}
+
+.event-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.blue-bg {
+  background: #0b3c6d;
+  color: white;
+  padding: 15px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.inner-img {
+  width: 90%;
+  border-radius: 12px;
+}
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #eef2ff;
+  color: #333;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.container h2 {
+  text-align: center;
+  color: #1e3c72;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* ================= NOTICE BOARD FLEX ================= */
+.events-list {
+  display: flex;
+  flex-wrap: wrap;              /* ✅ responsive */
+  gap: 25px;
+  justify-content: center;      /* ✅ center cards */
+}
+
+/* ================= NOTICE CARD ================= */
+.event {
+  background: #ffffff;
+  width: 320px;
+  padding: 22px;
+  border-radius: 14px;
+  border-left: 6px solid #1e3c72;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.event:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+}
+
+/* ================= CONTENT ================= */
+.event h3 {
+  color: #1e3c72;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.event time {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.event p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ================= OPTIONAL NEW BADGE ================= */
+.event h3 span {
+  background: #ff3b1f;
+  color: white;
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .event {
+    width: 100%;
+  }
+
+  .container h2 {
+    font-size: 26px;
+  }
+}
+
