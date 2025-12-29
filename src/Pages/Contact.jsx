@@ -1,19 +1,44 @@
 import "../styles/style4.css";
 
 export default function Contact() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.target;
+
     const message = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim(),
     };
 
-    localStorage.setItem("contactMessage", JSON.stringify(message));
-    alert("Message sent successfully");
-    form.reset();
+    // basic frontend validation
+    if (!message.name || !message.email || !message.message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(message),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert(data.message || "Message sent successfully");
+        form.reset();
+      } else {
+        alert(data.error || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Frontend error:", error);
+      alert("Server error. Please try again later.");
+    }
   };
 
   return (
@@ -27,7 +52,7 @@ export default function Contact() {
           <p><strong>Phone:</strong> +91 80000 00000</p>
           <p><strong>Email:</strong> info@infomatics.edu.in</p>
 
-          {/* 📍 LOCATION MAP */}
+          {/* LOCATION MAP */}
           <div className="map-box">
             <iframe
               title="College Location"
@@ -35,7 +60,7 @@ export default function Contact() {
               width="100%"
               height="350"
               style={{ border: 0 }}
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
@@ -54,7 +79,7 @@ export default function Contact() {
 
             <label>
               Email
-              <input name="email" required />
+              <input type="email" name="email" required />
             </label>
 
             <label>
@@ -62,7 +87,9 @@ export default function Contact() {
               <textarea name="message" required />
             </label>
 
-            <button className="btn">Send Message</button>
+            <button type="submit" className="btn">
+              Send Message
+            </button>
           </form>
         </div>
       </section>
