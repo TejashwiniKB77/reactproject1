@@ -3,63 +3,38 @@ const Contact = require("../models/Contact");
 
 const router = express.Router();
 
-// CREATE (POST)
-router.post("/", async (req, res) => {
+// CREATE contact
+router.post("/", async (req, res, next) => {
   try {
-    console.log("REQ BODY:", req.body); // 🔍 DEBUG
-
     const { name, email, message } = req.body;
 
-    // ✅ validation
     if (!name || !email || !message) {
-      return res.status(400).json({
-        error: "All fields are required"
-      });
+      const error = new Error("All fields are required");
+      error.statusCode = 400;
+      throw error;
     }
 
     const contact = new Contact({ name, email, message });
     await contact.save();
 
     res.status(201).json({
-      message: "Message sent successfully"
+      success: true,
+      message: "Message sent successfully",
     });
-
   } catch (err) {
-    console.error("CONTACT ERROR:", err);
-    res.status(500).json({
-      error: "Server error"
-    });
+    next(err); // 🔥 send to global error handler
   }
 });
 
-// READ (GET)
-router.get("/", async (req, res) => {
+// GET all contacts
+router.get("/", async (req, res, next) => {
   try {
     const contacts = await Contact.find();
     res.json(contacts);
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch messages" });
+    err.statusCode = 500;
+    next(err);
   }
 });
-// UPDATE contact
-router.put("/:id", async (req, res) => {
-  try {
-    await Contact.findByIdAndUpdate(req.params.id, req.body);
-    res.json({ message: "Contact updated" });
-  } catch {
-    res.status(500).json({ error: "Update failed" });
-  }
-});
-
-// DELETE contact
-router.delete("/:id", async (req, res) => {
-  try {
-    await Contact.findByIdAndDelete(req.params.id);
-    res.json({ message: "Contact deleted" });
-  } catch {
-    res.status(500).json({ error: "Delete failed" });
-  }
-});
-
 
 module.exports = router;
