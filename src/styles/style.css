@@ -418,3 +418,40 @@ footer {
     max-width: 320px;
   }
 }
+.page-layout {
+  display: flex;
+}
+
+.left-login {
+  width: 180px;
+  padding: 20px;
+  background: #0b2c4d;
+  min-height: 100vh;
+}
+
+.login-btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background: white;
+  color: #0b2c4d;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.login-btn:hover {
+  background: #ffc107;
+  color: black;
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.auth-page,
+.dashboard {
+  max-width: 400px;
+  margin: auto;
+}

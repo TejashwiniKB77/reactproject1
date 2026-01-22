@@ -9,48 +9,20 @@ export default function Header() {
           <div className="left-info">
             <span className="follow-text">Follow Us:</span>
 
-            <a
-              href="https://www.facebook.com/infomaticsnpuc/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                alt="Facebook"
-              />
+            <a href="https://www.facebook.com/infomaticsnpuc/" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
             </a>
 
-            <a
-              href="https://www.instagram.com/infomaticsnpuc/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                alt="Instagram"
-              />
+            <a href="https://www.instagram.com/infomaticsnpuc/" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
             </a>
 
-            <a
-              href="https://www.youtube.com/channel/UCTjJ1M4pKPkOkbOiE9ZEirA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-                alt="YouTube"
-              />
+            <a href="https://www.youtube.com/" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
             </a>
 
-            <a
-              href="https://wa.me/919008994808"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-                alt="WhatsApp"
-              />
+            <a href="https://wa.me/919008994808" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
             </a>
           </div>
 
@@ -59,6 +31,11 @@ export default function Header() {
             <span>📍 Rajanukunte, Yelahanka, Bengaluru</span>
             <span>✉️ director@infomaticsnpuc.in</span>
             <span>📞 900 899 4808</span>
+
+            {/* ✅ LOGIN BUTTON */}
+            <a href="/login" className="top-login-btn">
+              Login
+            </a>
           </div>
 
         </div>
@@ -67,11 +44,7 @@ export default function Header() {
       {/* 🔹 MAIN HEADER */}
       <header className="topbar">
         <div className="header-inner">
-          <img
-            src="/images.png"
-            alt="College Logo"
-            className="logo"
-          />
+          <img src="/images.png" alt="College Logo" className="logo" />
 
           <div className="header-text">
             <h1>INFOMATICS NATIONAL PU COLLEGE</h1>

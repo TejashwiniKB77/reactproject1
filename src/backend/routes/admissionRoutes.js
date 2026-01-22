@@ -3,15 +3,16 @@ const Admission = require("../models/Admission");
 
 const router = express.Router();
 
-// CREATE admission
-router.post("/", async (req, res, next) => {
+// POST /api/admission/enquiry
+router.post("/enquiry", async (req, res, next) => {
   try {
     const { name, email, phone, stream } = req.body;
 
     if (!name || !email || !phone || !stream) {
-      const error = new Error("Required admission fields missing");
-      error.statusCode = 400;
-      throw error;
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required"
+      });
     }
 
     const admission = new Admission(req.body);
@@ -19,20 +20,19 @@ router.post("/", async (req, res, next) => {
 
     res.status(201).json({
       success: true,
-      message: "Admission submitted successfully",
+      message: "Admission enquiry submitted"
     });
   } catch (err) {
     next(err);
   }
 });
 
-// GET admissions
+// GET /api/admission
 router.get("/", async (req, res, next) => {
   try {
     const admissions = await Admission.find();
-    res.json(admissions);
+    res.json({ success: true, data: admissions });
   } catch (err) {
-    err.statusCode = 500;
     next(err);
   }
 });

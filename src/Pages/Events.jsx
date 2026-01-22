@@ -24,7 +24,7 @@ export default function Events() {
       {/* ===== EVENTS SECTION ===== */}
       <section className="events-section">
         <div className="events-header">
-          <span className="events-tag">📖 NEWS & EVENTS</span>
+          <span className="events-tag">NEWS & EVENTS</span>
           <h2>
             Our Latest News & <span>Events</span>
           </h2>
@@ -39,8 +39,8 @@ export default function Events() {
               <img src="/annualday.jpg" alt="Annual Sports Day" />
             </div>
             <div className="event-meta">
-              <span>📅 14 Dec, 2024</span>
-              <span>⏰ 09.00AM - 04.00PM</span>
+              <span> 14 Dec, 2024</span>
+              <span>09.00AM - 04.00PM</span>
             </div>
             <h3>Annual Sports Day</h3>
           </div>
@@ -59,8 +59,8 @@ export default function Events() {
               />
             </div>
             <div className="event-meta">
-              <span>📅 05 Oct, 2024</span>
-              <span>⏰ 10.00AM - 04.00PM</span>
+              <span> 05 Oct, 2024</span>
+              <span> 10.00AM - 04.00PM</span>
             </div>
             <h3>Parents & Teachers Meet</h3>
           </div>
@@ -71,8 +71,8 @@ export default function Events() {
               <img src="/science.jpeg" alt="Science Exhibition" />
             </div>
             <div className="event-meta">
-              <span>📅 03 Aug, 2024</span>
-              <span>⏰ 10.00AM - 04.00PM</span>
+              <span> 03 Aug, 2024</span>
+              <span>10.00AM - 04.00PM</span>
             </div>
             <h3>Yearly Science Exhibition</h3>
           </div>

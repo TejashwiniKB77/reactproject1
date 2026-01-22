@@ -1,0 +1,78 @@
+/* Full page – NO background */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;   /* ✅ no full page color */
+}
+
+/* Login box – BACKGROUND COLOR HERE */
+.login-card {
+  background: linear-gradient(135deg, #4f46e5, #9333ea); /* ✅ card background */
+  padding: 35px;
+  width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+}
+
+/* Title */
+.login-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+/* Inputs */
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Remember + forgot */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* Links */
+.link {
+  color: #ffe082;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #4f46e5;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #ffe082;
+}
+
+/* Register text */
+.register-text {
+  margin-top: 20px;
+  font-size: 14px;
+}

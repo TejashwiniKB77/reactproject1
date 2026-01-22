@@ -1,0 +1,36 @@
+.otp-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6ff;
+}
+
+.otp-card {
+  width: 320px;
+  padding: 30px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.otp-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.otp-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: white;
+  color: #2575fc;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -13,8 +13,15 @@ import Events from "./Pages/Events";
 import NoticeBoard from "./Pages/NoticeBoard";
 import Career from "./Pages/Career";
 import Contact from "./Pages/Contact";
+import VerifyOtp from "./Pages/VerifyOtp";
+import ForgotPassword from "./Pages/ForgotPassword";
 import NotFound from "./Pages/NotFound";
 
+// ✅ NEW PAGES
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import Register from "./Pages/Register";
+import CareerGuidance from "./Pages/CareerGuidance";
 
 export default function App() {
   useEffect(() => {
@@ -23,9 +30,10 @@ export default function App() {
 
   return (
     <>
+      {/* ===== HEADER ===== */}
       <Header />
 
-      {/* ✅ MOVING ANNOUNCEMENT BAR */}
+      {/* ===== ANNOUNCEMENT BAR ===== */}
       <div className="announcement-bar">
         <div className="marquee">
           <span>
@@ -35,8 +43,10 @@ export default function App() {
         </div>
       </div>
 
+      {/* ===== NAVBAR ===== */}
       <Navbar />
 
+      {/* ===== ROUTES ===== */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -47,9 +57,18 @@ export default function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
 
+        {/* ✅ AUTH ROUTES */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
+<Route path="/career-guidance" element={<CareerGuidance />} />
+<Route path="/verify-otp" element={<VerifyOtp />} />
+<Route path="/forgot-password" element={<ForgotPassword />} />
+        {/* ===== NOT FOUND ===== */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
+      {/* ===== FOOTER ===== */}
       <Footer />
     </>
   );

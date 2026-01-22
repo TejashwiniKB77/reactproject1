@@ -158,3 +158,34 @@ input, textarea, select {
   background: #003c8f;
   color: white;
 }
+.top-info-bar {
+  background: #0b2c4d;
+  color: white;
+  font-size: 14px;
+}
+
+.top-info-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+}
+
+.right-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.top-login-btn {
+  background: #ffc107;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-login-btn:hover {
+  background: #ff9800;
+}
